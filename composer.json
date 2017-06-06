@@ -1,0 +1,24 @@
+{
+  "name": "acquiropay/omnipay-demo",
+  "description": "Demo Application for AcquiroPay driver for the Omnipay PHP payment processing library",
+  "license": "MIT",
+  "require": {
+    "acquiropay/omnipay-acquiropay": "^1.0",
+    "vlucas/phpdotenv": "^2.4"
+  },
+  "require-dev": {
+    "larapack/dd": "^1.1"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
