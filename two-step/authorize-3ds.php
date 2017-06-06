@@ -1,14 +1,13 @@
 <?php
 
 use Omnipay\Common\CreditCard;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 
 require 'bootstrap.php';
 
 $card = new CreditCard(array(
     'firstName' => 'CARD',
     'lastName' => 'HOLDER',
-    'number' => '4000000000000002',
+    'number' => '5543735484626654',
     'expiryMonth' => 1,
     'expiryYear' => '2020',
     'cvv' => 362,
@@ -29,5 +28,4 @@ if (!$response->isSuccessful()) {
 }
 
 $_SESSION['transactionReference'] = $response->getTransactionReference();
-
-(new RedirectResponse('/two-step/capture.php'))->send();
+$response->getRedirectResponse()->send();
