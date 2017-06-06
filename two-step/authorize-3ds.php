@@ -28,4 +28,4 @@ if (!$response->isSuccessful()) {
 }
 
 $_SESSION['transactionReference'] = $response->getTransactionReference();
-$response->getRedirectResponse()->send();
+$response->redirect();
