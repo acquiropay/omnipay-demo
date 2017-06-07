@@ -30,4 +30,7 @@ if (!$response->isSuccessful()) {
 
 $_SESSION['transactionReference'] = $response->getTransactionReference();
 
-(new RedirectResponse('/two-step/capture.php'))->send();
+dump($response->getData());
+
+echo '<a href="/two-step/capture.php">CAPTURE</a><br />';
+echo '<a href="/two-step/void.php?transactionReference=' . $response->getTransactionReference() . '">VOID</a>';

@@ -22,5 +22,7 @@ if (!$response->isSuccessful()) {
     dd('complete authorize failure', $request->getData(), $response->getData());
 }
 
-(new RedirectResponse('/two-step/capture.php'))->send();
+echo '<a href="/two-step/capture.php">CAPTURE</a><br />';
+echo '<a href="/two-step/void.php?transactionReference='.$response->getTransactionReference().'">VOID</a>';
+
 
